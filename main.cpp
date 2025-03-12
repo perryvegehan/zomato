@@ -5,6 +5,12 @@
 #include "restaurant.hpp"
 #include "search.hpp"
 #include "searchmgr.hpp"
+#include "deliverymgr.hpp"
+#include "deliverypartner.hpp"
+#include "customer.hpp"
+#include "customermgr.hpp"
+#include "order.hpp"
+#include "ordermgr.hpp"
 
 int main()
 {
@@ -27,5 +33,19 @@ int main()
     searchmgr->search_dish("Egg");
 
     // now lets search for a dish
+
+    DeliveryPartner* anil = new DeliveryPartner("Anil",4);
+    DeliveryPartner* suresh = new DeliveryPartner("Suresh",3);
+
+    // customer onboarding
+    Customer* pratyush = new Customer("Pratyush",6);
+
+    // lets place order from menu 2 rest veg
+
+    vector<Dish*> dishes;
+    dishes.push_back(egg);
+    dishes.push_back(fries);
+    OrderMgr* ordermgr = OrderMgr::get_ordermgr();
+    ordermgr->recieve_order("Pratyush", dishes, "veg");
 
 }

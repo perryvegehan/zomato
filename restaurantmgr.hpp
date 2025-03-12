@@ -14,4 +14,5 @@ class RestaurantMgr
     
     static RestaurantMgr* get_restaurant_mgr();
     void add_restaurant(Restaurant* restaurant);
+    Restaurant* find_restaurant(string name);
 };

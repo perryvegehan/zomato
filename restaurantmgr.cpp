@@ -14,3 +14,13 @@ void RestaurantMgr::add_restaurant(Restaurant* rest)
     cout<<"The restaurant "<<rest->name<<" is being added"<<ed;
     restaurants[rest->name] = rest;
 }
+
+Restaurant* RestaurantMgr::find_restaurant(string name)
+{
+    for(auto i:restaurants)
+    {
+        if(i.first == name)
+        return i.second;
+    }
+    return null;
+}
